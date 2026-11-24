@@ -8,3 +8,5 @@ data/cache/
 # Never commit Google credentials
 *credentials*.json
 service-account*.json
+.claude/
+.idea/
