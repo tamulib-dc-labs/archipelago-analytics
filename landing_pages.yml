@@ -1,0 +1,42 @@
+# Pretty collection landing URLs → collection UUID.
+# Views of these pages count toward the collection (as landing-page views).
+# Keys can be a path on digitalcollections.library.tamu.edu or a full URL.
+# Pre-filled by matching each page's GA title to a collection name; please review.
+
+/basbanes-eternal-passion: 5fd68043-cf25-4793-b611-75dd1566eedb  # Nicholas A. Basbanes Collection - The Eternal Passion
+/berger-cloonan-decorated-papers: 1c59aeea-7ab4-4c93-bcd3-537569876154  # Berger-Cloonan Collection of Decorated Papers
+/charting-texas: 70e55051-8789-464f-af00-3436672851f9  # Charting Texas
+/cherokee-freedmen: 7d02ab63-5e33-4982-bc9c-2a45adba0a84  # Cherokee Freedmen Collection
+/cole-papers: f013f4a2-ea93-4fae-b67d-21efe84687b6  # J. R. Cole Papers
+/college-of-medicine-class-rosters: 7e93c4ce-d043-42cb-868c-caf02fa7ecbb  # College of Medicine Class Rosters
+/college-of-veterinary-medicine-images: 4c818627-3fa1-4302-b116-fc99779fb82b  # College of Veterinary Medicine & Biological Sciences Image Collection
+/cushing-historical-images: 396cdd10-75f5-448d-98b6-c2ff3b57cd8b  # Cushing Historical Images Collection
+/football-programs: 2e0151b9-0d9c-46fd-a517-f93270bee205  # Texas A&M Athletic Programs - Football
+/gathright-letters: 0dc5f4e4-d671-4ea1-8a7d-511dd30f8ab6  # Thomas S. Gathright Letters
+/geologic-atlas: 2b10ad56-a6cb-44c8-ae66-3fd5a1b4e09e  # Geologic Atlas of the United States
+/historical-maps-cuba: 9201ab40-98ff-40cb-86cb-5bc53990dddf  # Historic Maps of Cuba
+/j-r-cole-papers: f013f4a2-ea93-4fae-b67d-21efe84687b6  # J. R. Cole Papers
+/lafayette-lumpkin: fbd30a26-2353-4374-9df7-f9cc7d00ca2b  # Lafayette Lumpkin Foster Collection
+/live-to-build-a-better-world: d1a1617f-b4aa-4586-9839-23a388199ad7  # Live To Build A Better World: Despair, Survival, and Hope in Science Fiction’s Response to Environmental Change
+/maps-brazos-county: b710b14f-a543-41a9-b6c6-348b6a1cdb35  # Maps of Brazos County, Texas
+/mcinnis-papers: 663fd872-02a3-42ec-9dd9-8515511954bb  # Louis L. McInnis Papers
+/minutes-houston-oil-company: 8de512fd-a125-48e7-8038-17a3d955b646  # Minutes of Houston Oil Company of Texas
+/primeros-libros: 97b397d8-de07-44cb-bb66-32a57acf3d16  # Primeros Libros
+/science-fiction-radio-show: 09d831fb-fdea-4028-a895-bbd2358b0c69  # Science Fiction Radio Show Collection
+/stephen-powys-marks-london: fd6138aa-9f4f-4df8-bc62-9cfa847eeb75  # Stephen Powys Marks London Collection
+/stripling-architecture: 1f3911b8-70ac-42ea-8dbf-60bb18430467  # Raiford Leak Stripling Architecture Collection
+/sullivan-ross-collection: da0aff7d-0102-4174-9fa4-8e9957e12e1e  # Lawrence Sullivan Ross Correspondence Collection
+/tamu-building-history: 7dfabdec-9241-4ad7-8bc2-9289df05a375  # Texas A&M Building History
+/tamu-forest-service-radio-broadcasts: 3b118a16-a9af-402b-8689-26174054b89f  # Texas A&M Forest Service Radio Broadcasts Collection
+/time-of-resolve: 0b171406-b444-4fa0-9e87-a87dd81f3003  # A Time of Resolve: Texas A&M during the Great Depression
+/web-archives: ba5c92b1-166f-4f93-aacb-9e3665d1901b  # Web Archives
+/woellhof-maps: 1f517d48-cb56-46ff-b9c6-c8508a7eed5e  # Woellhof Maps
+/wwi-postcards: bd943e6f-0897-4cbd-880a-a484898792fb  # World War I Postcards
+/wwii-service-maps: 28f1fcca-d1aa-4b8a-91da-457ff2237c53  # World War II Service Maps
+/yearbooks: b72f8927-eebf-4f09-a8ae-d4bce593530e  # Texas A&M Yearbook Collection
+/yell-books: 3f2765dd-0a83-4e0f-b027-9f17bf170381  # A.M.C. Yell Book Collection
+/yellbooks: 3f2765dd-0a83-4e0f-b027-9f17bf170381  # A.M.C. Yell Book Collection
+
+# Titles that didn't match a known collection name; fill in the UUID if they are collections:
+# /audio-interviews-basbanes:   # Audio Interviews from the Nicholas A. Basbanes Collection
+# /los-palabristas:   # Los Palabristas

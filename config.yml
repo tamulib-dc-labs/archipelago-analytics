@@ -1,0 +1,52 @@
+# Archipelago analytics configuration
+base_url: https://digitalcollections.library.tamu.edu
+ga_property_id: "555926229"
+
+# GA4 report window. Dates before the property existed simply return nothing.
+start_date: "2026-09-01"
+end_date: "yesterday"
+
+# Only pages under this prefix are treated as digital objects.
+path_prefix: /do/
+
+# Only count traffic on these hosts (drops localhost / GitHub Pages dev traffic).
+hostnames:
+  - digitalcollections.library.tamu.edu
+  - exhibits.library.tamu.edu
+
+# Pretty collection URLs (/yearbooks …) → collection UUID. Views of these
+# pages count as landing-page views of that collection.
+landing_pages_file: landing_pages.yml
+
+# Sections outside /do/ reported as their own groups.
+#   detail: full  → same analytics as a collection (sources, countries, pages…)
+#   detail: basic → views and users only (cheaper: one extra GA request per group)
+# `paths` match the path itself and anything below it (/search matches
+# /search/… but not /search_grid). Query strings are never part of a GA path.
+page_groups:
+  - id: aggieland-through-time
+    label: Aggieland Through Time
+    kind: Digital exhibit
+    host: exhibits.library.tamu.edu
+    paths: [/aggieland-through-time]
+    detail: full
+  - id: search
+    label: Search
+    kind: Site search
+    host: digitalcollections.library.tamu.edu
+    paths: [/search, /search_grid, /search_pages, /search_websites, /advanced-search]
+    detail: basic
+
+# Collections to always include (UUIDs). Others are discovered automatically
+# from the `partOf` links of items that received traffic.
+collections:
+  - 28f1fcca-d1aa-4b8a-91da-457ff2237c53  # World War II Service Maps
+
+discover_collections: true
+
+# Politeness / cost limits for the Archipelago metadata endpoints.
+# Item manifests are cached in data/cache/ so each one is fetched once.
+max_new_manifest_fetches: 12000
+request_workers: 4
+request_delay_seconds: 0.2
+user_agent: "archipelago-analytics/0.1 (TAMU Libraries usage dashboard)"
