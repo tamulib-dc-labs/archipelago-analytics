@@ -1,0 +1,60 @@
+name: Harvest analytics and deploy site
+
+on:
+  schedule:
+    # Mon, Wed, Fri at 09:17 UTC (~4 AM Central), after GA has processed the previous day.
+    - cron: "17 9 * * 1,3,5"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["site/**", "analytics/**", "config.yml", ".github/workflows/build.yml"]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v6
+
+      # Item-manifest cache, so each Archipelago object is only looked up once.
+      - uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: archipelago-cache-${{ github.run_id }}
+          restore-keys: archipelago-cache-
+
+      # Option A (simplest): a service-account JSON key stored as a secret.
+      # Option B (no key): set GCP_WORKLOAD_IDENTITY_PROVIDER + GCP_SERVICE_ACCOUNT
+      # repository variables instead and leave the secret unset.
+      - uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GA_CREDENTIALS_JSON }}
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+      - name: Harvest
+        run: uv run python -m analytics.build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
